@@ -1,0 +1,48 @@
+<p>
+  <b>First name:</b>
+  <%=h @person.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @person.last_name %>
+</p>
+
+<p>
+  <b>Middle names:</b>
+  <%=h @person.middle_names %>
+</p>
+
+<p>
+  <b>House name:</b>
+  <%=h @person.house_name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @person.title %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @person.gender %>
+</p>
+
+<p>
+  <b>Birth date:</b>
+  <%=h @person.birth_date %>
+</p>
+
+<p>
+  <b>Death date:</b>
+  <%=h @person.death_date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @person.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
