@@ -11,7 +11,18 @@
 
 ActiveRecord::Schema.define(:version => 20090827153914) do
 
-# Could not dump table "people" because of following StandardError
-#   Unknown type 'varchar(255)' for column 'first_name'
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_names"
+    t.string   "house_name"
+    t.string   "title"
+    t.string   "gender"
+    t.date     "birth_date"
+    t.date     "death_date"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
