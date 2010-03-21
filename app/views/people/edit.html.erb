@@ -36,6 +36,14 @@
     <%= f.date_select :death_date %>
   </p>
   <p>
+    <%= f.label :father_id %><br />
+    <%= f.collection_select :father_id, Person.all, :id, :full_name %>
+  </p>
+  <p>
+    <%= f.label :mother_id %><br />
+    <%= f.collection_select :mother_id, Person.all, :id, :full_name %>
+  </p>
+  <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>

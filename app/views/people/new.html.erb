@@ -29,11 +29,11 @@
   </p>
   <p>
     <%= f.label :birth_date %><br />
-    <%= f.date_select :birth_date %>
+    <%= f.date_select :birth_date, :start_year => 0, :end_year => Time.now.year %>
   </p>
   <p>
     <%= f.label :death_date %><br />
-    <%= f.date_select :death_date %>
+    <%= f.date_select :death_date, :start_year => 0, :end_year => Time.now.year%>
   </p>
   <p>
     <%= f.label :description %><br />

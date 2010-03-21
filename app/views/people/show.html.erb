@@ -38,6 +38,20 @@
   <%=h @person.death_date %>
 </p>
 
+<% if @person.father_id then father = Person.find(@person.father_id) %>
+<p>
+  <b>Father:</b>
+  <%= link_to father.full_name, father %>
+</p>
+<% end %>
+
+<% if @person.mother_id then mother = Person.find(@person.mother_id) %>
+<p>
+  <b>Mother:</b>
+  <%= link_to mother.full_name, mother %>
+</p>
+<% end %>
+
 <p>
   <b>Description:</b>
   <%=h @person.description %>
