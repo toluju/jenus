@@ -1,62 +1,25 @@
-<p>
-  <b>First name:</b>
-  <%=h @person.first_name %>
-</p>
+<div id="person-header">
+  <img src="#" alt="portrait">
 
-<p>
-  <b>Last name:</b>
-  <%=h @person.last_name %>
-</p>
+  <div id="person-actions">
+    <%= link_to 'Edit', edit_person_path(@person) %>
+  </div>
 
-<p>
-  <b>Middle names:</b>
-  <%=h @person.middle_names %>
-</p>
+  <h2><%=h @person.full_name %></h2>
+  <p class="date-range">(<%=h @person.birth_date %> - <%h @person.death_date %>)</p>
 
-<p>
-  <b>House name:</b>
-  <%=h @person.house_name %>
-</p>
+  <% if @person.father_id then father = Person.find(@person.father_id) %>
+  <p class="father">Father: <%= link_to father.full_name, father %></p>
+  <% end %>
 
-<p>
-  <b>Title:</b>
-  <%=h @person.title %>
-</p>
+  <% if @person.mother_id then mother = Person.find(@person.mother_id) %>
+  <p class="mother">Mother: <%= link_to mother.full_name, mother %></p>
+  <% end %>
+  
+  <div class="clear"></div>
+</div>
 
-<p>
-  <b>Gender:</b>
-  <%=h @person.gender %>
-</p>
-
-<p>
-  <b>Birth date:</b>
-  <%=h @person.birth_date %>
-</p>
-
-<p>
-  <b>Death date:</b>
-  <%=h @person.death_date %>
-</p>
-
-<% if @person.father_id then father = Person.find(@person.father_id) %>
-<p>
-  <b>Father:</b>
-  <%= link_to father.full_name, father %>
-</p>
-<% end %>
-
-<% if @person.mother_id then mother = Person.find(@person.mother_id) %>
-<p>
-  <b>Mother:</b>
-  <%= link_to mother.full_name, mother %>
-</p>
-<% end %>
-
-<p>
-  <b>Description:</b>
+<div id="person-content">
   <%=h @person.description %>
-</p>
+</div>
 
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>

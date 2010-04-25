@@ -4,14 +4,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>People: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <title>Jenus - Geneology evolved</title>
+  <%= stylesheet_link_tag 'main' %>
+  <%= javascript_include_tag 'jquery-1.3.2.min.js' %>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<div id="main">
 
-<%= yield %>
+<div id="header">
+  <h1><a href="/">Jenus - Genealogy evolved</a></h1>
+  <ul id="menu">
+    <li><a href="#">Find Person</a></li>
+    <li><%= link_to 'Add Person', new_person_path %></li>
+    <li><a href="#">Discussion</a></li>
+  </ul>
+</div>
+
+<div id="content">
+  <p style="color: green"><%= flash[:notice] %></p>
+
+  <%= yield %>
+</div>
+
+<div id="footer">
+  &copy;2010 Jenus. Moo.
+</div>
+
+</div>
 
 </body>
 </html>
